@@ -27,20 +27,20 @@ function toggleTodoAction(id) {
     }
 }
 
-function addTodoAction(goal) {
+function addGoalAction(goal) {
     return {
         type: ADD_GOAL,
         todo
     }
 }
-function removeTodoAction(id) {
+function removeGoalAction(id) {
     return {
         type: REMOVE_GOAL,
         id
     }
 }
 
-function toggleTodoAction(id) {
+function toggleGoalAction(id) {
     return {
         type: TOGGLE_GOAL,
         id
@@ -119,14 +119,11 @@ function goals(state = [], action) {
     }
 }
 
-store.dispatch({
-    type: ADD_TODO,
-    todo: {
-        id: 0,
-        name: "Learn redux",
-        complete: false
-    }
-})
+store.dispatch(addGoalAction({
+    id: 0,
+    name: 'Wash the car',
+    complete: false
+}))
 
 
 
